@@ -20,17 +20,17 @@ namespace NorthwestLabsApp.Models
         public int CustomerID { get; set; }
 
         [Display(Name = "Date Arrived")]
-        public string DateArrived { get; set; }
+        public DateTime DateArrived { get; set; }
 
         [Display(Name = "Received By")]
         [StringLength(30)]
         public string ReceivedBy { get; set; }
 
         [Display(Name = "Due Date")]
-        public string DueDate { get; set; }
+        public DateTime DueDate { get; set; }
 
         [Display(Name = "Confirmation Date")]
-        public string ConfirmationDate { get; set; }
+        public DateTime? ConfirmationDate { get; set; }
 
         [Display(Name = "Comments")]
         public string Comments { get; set; }
@@ -40,7 +40,7 @@ namespace NorthwestLabsApp.Models
         public bool RushOrder { get; set; }
 
         [Display(Name = "Price")]
-        public decimal Price { get; set; }
+        public decimal? Price { get; set; }
 
         [Display(Name = "Discount Type")]
         public string DiscountType { get; set; }
@@ -51,10 +51,10 @@ namespace NorthwestLabsApp.Models
         public string StatusCode { get; set; }
 
         [Display(Name = "Original Price Quote")]
-        public decimal OrgPriceQuote { get; set; }
+        public decimal? OrgPriceQuote { get; set; }
 
         [Display(Name = "Adjusted Price Quote")]
-        public decimal AdjustedPriceQuote { get; set; }
+        public decimal? AdjustedPriceQuote { get; set; }
 
         [Display(Name = "Data Report")]
         public string DataReport { get; set; }

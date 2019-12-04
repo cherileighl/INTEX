@@ -1,4 +1,5 @@
-﻿using NorthwestLabsApp.Models;
+﻿using NorthwestLabsApp.DAL;
+using NorthwestLabsApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace NorthwestLabsApp.Controllers
 {
     public class OrderStatusController : Controller
     {
+        private NorthwestContext db = new NorthwestContext();
         public static List<Order_Statuses> lstOrderStatus = new List<Order_Statuses>()
         {
 
