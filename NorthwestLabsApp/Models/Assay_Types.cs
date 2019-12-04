@@ -9,20 +9,22 @@ namespace NorthwestLabsApp.Models
 {
     public class Assay_Types
     {
-        [Required(ErrorMessage = "Assay Type required.")]
+        [Required(ErrorMessage = "Assay type required.")]
         [DisplayName("Assay Type")]
+        [StringLength(30)]
         public string AssayType { get; set; }
 
-        [Required(ErrorMessage = "Assay Type required.")]
-        [DisplayName("Assay Type")]
+        [DisplayName("Assay Description")]
+        //database has varchar(MAX) - might need to specify string length?
         public string AssayDesc { get; set; }
 
-        [Required(ErrorMessage = "Assay Type required.")]
-        [DisplayName("Assay Type")]
+        [DisplayName("Assay Protocol")]
         public string AssayProtocol { get; set; }
 
-        [Required(ErrorMessage = "Assay Type required.")]
-        [DisplayName("Assay Type")]
+        [DisplayName("Days to Complete")]
         public int DaysToComplete { get; set; }
+
+        [DisplayName("Materials")]
+        public string Materials { get; set; }
     }
 }
