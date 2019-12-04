@@ -10,11 +10,12 @@ namespace NorthwestLabsApp.Models
     [Table("Test_Tubes")]
     public class Test_Tubes
     {
-        [Key]
+        [Key, Column(Order = 0)]
         [Required]
         [Display(Name = "LT Number")]
         public int LTNumber { get; set; }
 
+        [Key, Column(Order = 1)]
         [Required]
         [Display(Name = "Test Tube Number")]
         public int TestTubeNum { get; set; }
