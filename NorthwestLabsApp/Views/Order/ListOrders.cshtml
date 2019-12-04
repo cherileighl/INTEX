@@ -1,0 +1,111 @@
+﻿@model IEnumerable<NorthwestLabsApp.Models.Orders>
+
+@{
+    ViewBag.Title = "ListOrders";
+}
+
+<h2>ListOrders</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateArrived)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReceivedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DueDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ConfirmationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RushOrder)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DiscountType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StatusCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrgPriceQuote)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdjustedPriceQuote)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataReport)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SummaryReport)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateArrived)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReceivedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DueDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ConfirmationDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RushOrder)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DiscountType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StatusCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrgPriceQuote)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdjustedPriceQuote)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataReport)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SummaryReport)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.OrderID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.OrderID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.OrderID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -10,11 +10,12 @@ namespace NorthwestLabsApp.Models
     [Table("Samples")]
     public class Samples
     {
-        [Key]
+        [Key, Column(Order = 0)]
         [Required]
         [Display(Name = "Compound Sequence Code")]
         public int CompSeqCode{ get; set; }
 
+        [Key, Column(Order = 1)]
         [Required]
         [Display(Name = "LT Number")]
         public int LTNumber { get; set; }

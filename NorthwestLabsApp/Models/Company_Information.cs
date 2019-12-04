@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NorthwestLabsApp.Models
 {
+    [Table("Company_Information")]
     public class Company_Information
     {
+        [Key]
         [Required]
         [StringLength(30)]
         public string CompanyName { get; set; }
