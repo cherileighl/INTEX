@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NorthwestLabsApp.DAL;
+using NorthwestLabsApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,6 +10,7 @@ namespace NorthwestLabsApp.Controllers
 {
     public class OrderController : Controller
     {
+        private NorthwestContext db = new NorthwestContext();
         // GET: Order
         public ActionResult Index()
         {
@@ -19,7 +22,11 @@ namespace NorthwestLabsApp.Controllers
         [HttpGet]
         public ActionResult ListOrders()
         {
-            return View();
+            ViewBag.status = OrderStatusController.lstOrderStatus;
+            IEnumerable < Orders > shippedOrders = db.Database.SqlQuery<Orders>(
+                "SELECT * FROM Orders o INNER JOIN Order_Statuses os ON o.StatusCode = os.StatusCode WHERE os.StatusDescription = 'Shipped'"
+            );
+            return View(shippedOrders);
         }
 
         //receive the order status and generate list
