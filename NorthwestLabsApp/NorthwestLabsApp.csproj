@@ -112,9 +112,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\Assay_TypesController.cs" />
+    <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\OrderStatusController.cs" />
+    <Compile Include="Controllers\TestsController.cs" />
     <Compile Include="DAL\NorthwestContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -122,6 +125,7 @@
     <Compile Include="Models\Assays.cs" />
     <Compile Include="Models\Assay_References.cs" />
     <Compile Include="Models\Assay_Types.cs" />
+    <Compile Include="Models\Catalog_Items.cs" />
     <Compile Include="Models\Company_Information.cs" />
     <Compile Include="Models\Compounds.cs" />
     <Compile Include="Models\Customers.cs" />
@@ -156,6 +160,21 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Order\ListOrders.cshtml" />
+    <Content Include="Views\Tests\Create.cshtml" />
+    <Content Include="Views\Tests\Delete.cshtml" />
+    <Content Include="Views\Tests\Details.cshtml" />
+    <Content Include="Views\Tests\Edit.cshtml" />
+    <Content Include="Views\Tests\Index.cshtml" />
+    <Content Include="Views\Assay_Types\Create.cshtml" />
+    <Content Include="Views\Assay_Types\Delete.cshtml" />
+    <Content Include="Views\Assay_Types\Details.cshtml" />
+    <Content Include="Views\Assay_Types\Edit.cshtml" />
+    <Content Include="Views\Assay_Types\Catalog.cshtml" />
+    <Content Include="Views\Customers\Create.cshtml" />
+    <Content Include="Views\Customers\Delete.cshtml" />
+    <Content Include="Views\Customers\Details.cshtml" />
+    <Content Include="Views\Customers\Edit.cshtml" />
+    <Content Include="Views\Customers\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
