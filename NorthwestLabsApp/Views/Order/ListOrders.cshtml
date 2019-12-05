@@ -1,10 +1,13 @@
-﻿@model IEnumerable<NorthwestLabsApp.Models.Orders>
+﻿
 
-@{
-    ViewBag.Title = "ListOrders";
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.DropDownList("Order Status", new SelectList(ViewBag.Statuses, "StatusCode", "StatusDescription"))
+    <input type="submit" value="Update"/>
 }
-
-<h2>ListOrders</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -12,98 +15,98 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.CustomerID)
+            Customer ID
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DateArrived)
+            Date Arrived
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ReceivedBy)
+            Received By
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DueDate)
+            Due Date
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ConfirmationDate)
+            Confirmation Date
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Comments)
+            Comments
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.RushOrder)
+            RushOrder
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Price)
+            Price
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DiscountType)
+            DiscountType
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.StatusCode)
+            StatusCode
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.OrgPriceQuote)
+            OrgPriceQuote
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.AdjustedPriceQuote)
+            AdjustedPriceQuote
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DataReport)
+            DataReport
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.SummaryReport)
+            SummaryReport
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in ViewBag.Orders) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.CustomerID)
+            @item.CustomerID
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DateArrived)
+            @item.DateArrived
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ReceivedBy)
+            @item.ReceivedBy
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DueDate)
+            @item.DueDate
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ConfirmationDate)
+            @item.ConfirmationDate
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Comments)
+            @item.Comments
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.RushOrder)
+            @item.RushOrder
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Price)
+            @item.Price
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DiscountType)
+            @item.DiscountType
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.StatusCode)
+            @item.StatusCode
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.OrgPriceQuote)
+            @item.OrgPriceQuote
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.AdjustedPriceQuote)
+            @item.AdjustedPriceQuote
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DataReport)
+            @item.DataReport
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.SummaryReport)
+            @item.SummaryReport
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.OrderID }) |
+            @Html.ActionLink("Edit", "Edit", new { id=item.OrderID }) @*|
             @Html.ActionLink("Details", "Details", new { id=item.OrderID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.OrderID })
+            @Html.ActionLink("Delete", "Delete", new { id=item.OrderID })*@
         </td>
     </tr>
 }
