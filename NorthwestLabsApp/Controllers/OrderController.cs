@@ -2,6 +2,7 @@
 using NorthwestLabsApp.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -54,6 +55,7 @@ namespace NorthwestLabsApp.Controllers
         }
 
         //EDIT ORDER
+        [HttpGet]
         public ActionResult Edit(string id)
         {
             if (id == null)
@@ -64,6 +66,19 @@ namespace NorthwestLabsApp.Controllers
             if (oOrder == null)
             {
                 return HttpNotFound();
+            }
+            return View(oOrder);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "OrderID,CustomerID,DateArrived,ReceivedBy,DueDate,ConfirmationDate,COmments,RushOrder,Price,DiscountType,StatusCode,OrgPriceQuote,AdjustedPriceQuote,DataReport,SummaryReport")] Orders oOrder)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(oOrder).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
             }
             return View(oOrder);
         }
