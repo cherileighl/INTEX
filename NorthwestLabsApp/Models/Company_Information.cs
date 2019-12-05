@@ -40,6 +40,6 @@ namespace NorthwestLabsApp.Models
         public string CompanyURL { get; set; }
 
         [Required]
-        public string DateFounded { get; set; }
+        public DateTime DateFounded { get; set; }
     }
 }

@@ -160,6 +160,11 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Order\ListOrders.cshtml" />
+<<<<<<< HEAD
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\FAQ.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+=======
     <Content Include="Views\Tests\Create.cshtml" />
     <Content Include="Views\Tests\Delete.cshtml" />
     <Content Include="Views\Tests\Details.cshtml" />
@@ -175,6 +180,7 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Customers\Edit.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
+>>>>>>> a212912ee1b81ec6ff62594c4d517270a6643d11
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
