@@ -23,6 +23,7 @@ namespace NorthwestLabsApp.Models
         [Required(ErrorMessage = "Password required")]
         [Display(Name = "Password")]
         [StringLength(30)]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
 
         [Required(ErrorMessage = "First Name required")]
@@ -38,6 +39,7 @@ namespace NorthwestLabsApp.Models
         [Required(ErrorMessage = "Primary phone required")]
         [Display(Name = "Primary Phone")]
         [StringLength(30)]
+        [Phone]
         public string CustPrimaryPhone { get; set; }
 
         [Display(Name = "Secondary Phone")]
@@ -49,7 +51,7 @@ namespace NorthwestLabsApp.Models
         [StringLength(30)]
         public string CustAddress1 { get; set; }
 
-        [Display(Name = "Address line 2")]
+        [Display(Name = "Address Line 2")]
         [StringLength(30)]
         public string CustAddress2 { get; set; }
 
@@ -71,6 +73,7 @@ namespace NorthwestLabsApp.Models
         [Required(ErrorMessage = "Email required")]
         [Display(Name = "Email")]
         [StringLength(30)]
+        [EmailAddress]
         public string CustEmail { get; set; }
 
         [Required(ErrorMessage = "Balance required")]

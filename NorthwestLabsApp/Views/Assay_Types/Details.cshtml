@@ -1,0 +1,50 @@
+﻿@model NorthwestLabsApp.Models.Assay_Types
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Assay_Types</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AssayDesc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssayDesc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AssayProtocol)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssayProtocol)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DaysToComplete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DaysToComplete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Materials)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Materials)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AssayType }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

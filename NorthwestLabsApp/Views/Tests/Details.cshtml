@@ -1,0 +1,58 @@
+﻿@model NorthwestLabsApp.Models.Tests
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tests</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AssayID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AssayID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ScheduledDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ScheduledDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompletionDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompletionDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TestID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
