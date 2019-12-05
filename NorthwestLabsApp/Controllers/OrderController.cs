@@ -22,17 +22,33 @@ namespace NorthwestLabsApp.Controllers
         [HttpGet]
         public ActionResult ListOrders()
         {
-            ViewBag.status = OrderStatusController.lstOrderStatus;
-            IEnumerable < Orders > shippedOrders = db.Database.SqlQuery<Orders>(
+            IEnumerable<Order_Statuses> orderStatuses = db.Database.SqlQuery<Order_Statuses>(
+                "SELECT * FROM Order_Statuses"
+            ).ToList();
+            IEnumerable<Orders> shippedOrders = db.Database.SqlQuery<Orders>(
                 "SELECT * FROM Orders o INNER JOIN Order_Statuses os ON o.StatusCode = os.StatusCode WHERE os.StatusDescription = 'Shipped'"
-            );
-            return View(shippedOrders);
+            ).ToList();
+
+            ViewBag.Statuses = orderStatuses;
+            ViewBag.Orders = shippedOrders;
+            ViewBag.Title = "Shipped Orders";
+            return View();
         }
 
         //receive the order status and generate list
         [HttpPost]
-        public ActionResult ListOrders(string orderStatus)
+        public ActionResult ListOrders(FormCollection form)
         {
+            string status = form["Order Status"].ToString();
+            IEnumerable<Order_Statuses> orderStatuses = db.Database.SqlQuery<Order_Statuses>(
+                "SELECT * FROM Order_Statuses"
+            ).ToList();
+            IEnumerable<Orders> dynamicOrders = db.Database.SqlQuery<Orders>(
+                $"SELECT * FROM Orders o INNER JOIN Order_Statuses os ON o.StatusCode = os.StatusCode WHERE os.StatusCode = '{status}'"
+            ).ToList();
+            ViewBag.Statuses = orderStatuses;
+            ViewBag.Orders = dynamicOrders;
+            ViewBag.Title = orderStatuses.FirstOrDefault(x => x.StatusCode == status).StatusDescription;
             return View();
         }
     }
