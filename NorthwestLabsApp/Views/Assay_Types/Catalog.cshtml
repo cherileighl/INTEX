@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Catalog";
+}
+
+<h2>Catalog</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Assay Type
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Test Protocol
+        </th>
+        <th>
+            Materials Needed
+        </th>
+        <th>
+            References
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in ViewBag.Catalog) {
+    <tr>
+        <td>
+            @item.AssayType
+        </td>
+        <td>
+            @item.AssayDesc
+        </td>
+        <td>
+            @item.AssayProtocol
+        </td>
+        <td>
+            @item.Materials
+        </td>
+        <td>
+            @item.Title
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

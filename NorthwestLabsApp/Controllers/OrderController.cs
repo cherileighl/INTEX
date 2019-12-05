@@ -3,6 +3,7 @@ using NorthwestLabsApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -51,6 +52,22 @@ namespace NorthwestLabsApp.Controllers
             ViewBag.Title = orderStatuses.FirstOrDefault(x => x.StatusCode == status).StatusDescription;
             return View();
         }
+
+        //EDIT ORDER
+        public ActionResult Edit(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Orders oOrder = db.orders.Find(id);
+            if (oOrder == null)
+            {
+                return HttpNotFound();
+            }
+            return View(oOrder);
+        }
+
     }
 
 }
